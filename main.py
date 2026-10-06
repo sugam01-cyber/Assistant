@@ -2,6 +2,7 @@ import pyttsx3
 import speech_recognition as sr
 import subprocess
 import time
+from selenium import webdriver
 
 # Voice interpreting Function
 def voice_interpretion():
@@ -40,6 +41,14 @@ def process_initiation():
         subprocess.Popen("pycharm")
     elif "open code" in text_variable.lower():
         subprocess.Popen("code")
+    elif "open instagram" in text_variable.lower():
+        controller=webdriver.Firefox()
+        controller.get("https://www.instagram.com")
+        time.sleep(100)
+    elif "open youtube" in text_variable.lower():
+        controller=webdriver.Firefox()
+        controller.get("https://www.youtube.com")
+        time.sleep(10)
 
 process_initiation()
 
